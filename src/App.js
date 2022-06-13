@@ -4,8 +4,8 @@ function App() {
   return (
     <div className="App">
       <h1>My Todos</h1>
-      <Todo text='Learn React'/>
-      <Todo text='Learn Nextjs'/>
+      <Todo text='Learn Deez'/>
+      <Todo text='Learn Nuts'/>
       <Todo text='Become Pro'/>
     </div>
   );
