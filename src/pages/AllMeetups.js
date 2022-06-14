@@ -1,7 +1,45 @@
-const AllMeetups = () => {
-  return (
-    <div>AllMeetups</div>
-  )
-}
+import { useEffect, useState } from "react";
+import MeetupsList from "../components/meetups/MeetupsList";
 
-export default AllMeetups
+const AllMeetups = () => {
+  const [meetupState, setIsLoading] = useState(true);
+  const [loadedMeetups, setLoadedMeetups] = useState([]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(
+      `https://reactapp-c8b84-default-rtdb.asia-southeast1.firebasedatabase.app/meetups.json`
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        const meetups = [];
+        for (const key in data) {
+          const meetup = {
+            id: key,
+            ...data[key],
+          };
+          meetups.push(meetup);
+        }
+        setIsLoading(false);
+        setLoadedMeetups(meetups);
+      });
+  }, []);
+
+  if (meetupState) {
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    );
+  }
+  return (
+    <section>
+      <h1>All Meetups</h1>
+      <MeetupsList meetups={loadedMeetups} />
+    </section>
+  );
+};
+
+export default AllMeetups;
