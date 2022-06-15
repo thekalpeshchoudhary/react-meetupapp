@@ -27,17 +27,14 @@ const AllMeetups = () => {
       });
   }, []);
 
-  if (meetupState) {
-    return (
-      <section>
-        <p>Loading...</p>
-      </section>
-    );
-  }
   return (
     <section>
       <h1>All Meetups</h1>
-      <MeetupsList meetups={loadedMeetups} />
+      {meetupState ? (
+        <p>Loading...</p>
+      ) : (
+        <MeetupsList meetups={loadedMeetups} />
+      )}
     </section>
   );
 };
