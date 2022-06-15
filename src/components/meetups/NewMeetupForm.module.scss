@@ -1,4 +1,4 @@
-$primary-color: #77002e;
+@use "../theme/_theme.scss";
 
 .form {
   padding: 1rem;
@@ -32,16 +32,16 @@ $primary-color: #77002e;
 .actions button {
   font: inherit;
   cursor: pointer;
-  background-color: $primary-color;
+  background-color: theme.$primary-color;
   color: white;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #77002e;
+  border: 1px solid theme.$primary-color;
   border-radius: 4px;
   font-weight: bold;
 }
 
 .actions button:hover,
 .actions button:active {
-  background-color: #a50e48;
-  border-color: #a50e48;
+  background-color: #180ea5;
+  border-color: #180ea5;
 }
