@@ -1,4 +1,4 @@
-import classes from './MeetupsList.module.css'
+import classes from './MeetupsList.module.scss'
 import MeetupsItem from './MeetupItem';
 
 const MeetupsList = (props) => {

@@ -1,4 +1,4 @@
-import classes from './Layout.module.css'
+import classes from './Layout.module.scss'
 import MainNav from './MainNav'
 
 const Layout = (props) => {
