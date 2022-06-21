@@ -1,0 +1,129 @@
+@use "../components/theme/common";
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background-color: white;
+  align-items: stretch;
+}
+.lightBlueCircle {
+  position: absolute;
+  width: 125px;
+  height: 282px;
+  left: 0px;
+  top: 0px;
+}
+.yellowCircle {
+  position: absolute;
+  width: 16%;
+  height: 153.17px;
+  left: 42%;
+  top: 42%;
+}
+.formHeading {
+  color: common.$darkGray;
+}
+.insideFlexLeft {
+  z-index: 100;
+  color: black;
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formBox {
+  width: 60%;
+  .formControl {
+    width: 100%;
+    height: 41px;
+    margin-top: 30px;
+    display: block;
+  }
+  .formInput {
+    border-bottom: 1px solid common.$lightGray;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    box-sizing: border-box;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid common.$primaryColor;
+      transition: border 500ms ease-out;
+    }
+  }
+  .userNameIcon {
+    background-image: url("../icons/emailIcon.svg");
+  }
+  .passIcon {
+    background-image: url("../icons/passIcon.svg");
+  }
+
+  .loginBtn {
+    background: common.$primaryColor;
+    border-radius: 5px;
+    height: 41px;
+    width: 45%;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: common.$normalFont;
+    font-weight: 600;
+    border: 0px;
+    &:hover {
+      border: 1px solid common.$secondaryColor;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+        0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    }
+  }
+  .linkBtn {
+    float: right;
+    height: 100%;
+    color: common.$secondaryColor;
+    background: none;
+    border: 0px;
+    font-size: common.$normalFont;
+    cursor: pointer;
+    &:hover {
+      font-weight: 500;
+    }
+  }
+}
+
+.insideFlexRight {
+  z-index: 100;
+  flex: 50%;
+  padding: 2% 2% 2% 0%;
+  .blueBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 123, 168, 0.72) 0%,
+      #007ba8 100%
+    );
+    border-radius: 26px;
+    height: 100%;
+  }
+  .mainHeading {
+    margin: 5%;
+    font-weight: 600;
+    font-size: 35px;
+    color: white;
+  }
+  .logo {
+    width: 180px;
+  }
+  .subHead {
+    margin: 5%;
+    color: white;
+    font-size: common.$subHeadFont;
+    font-weight: 400;
+  }
+}
