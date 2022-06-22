@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Lms.module.scss";
+import LoginForm from "./LoginForm";
 
 const Lms = () => {
   return (
@@ -14,31 +15,12 @@ const Lms = () => {
         alt="yellowCircle"
         className={classes.yellowCircle}
       />
+      <div className={`${classes.circleRing} ${classes.yellowRing}`}></div>
+      <div className={`${classes.circleRing} ${classes.blueRing}`}></div>
       <div className={classes.insideFlexLeft}>
         <div className={classes.formBox}>
           <h1 className={classes.formHeading}>LOGIN</h1>
-          <form className={classes.form}>
-            <input
-              className={`${classes.formControl} ${classes.formInput}  ${classes.userNameIcon}`}
-              type="text"
-              placeholder="Email"
-              id="email"
-            />
-            <input
-              className={`${classes.formControl} ${classes.formInput}  ${classes.passIcon}`}
-              type="text"
-              placeholder="Password"
-              id="password"
-            />
-            <div className={classes.formControl}>
-              <input type="checkbox" checked="checked" />
-              <span>Remember Me</span>
-            </div>
-            <div className={`${classes.formControl} ${classes.formAction} `}>
-              <button className={classes.loginBtn}>Sign In</button>
-              <button className={classes.linkBtn}>Forgot Password?</button>
-            </div>
-          </form>
+          <LoginForm classes={classes}/>
         </div>
       </div>
       <div className={classes.insideFlexRight}>

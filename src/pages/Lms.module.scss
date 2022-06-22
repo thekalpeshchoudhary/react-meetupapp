@@ -23,6 +23,8 @@
 }
 .formHeading {
   color: common.$darkGray;
+  font-size: common.$mainHeadFont;
+  font-weight: 400;
 }
 .insideFlexLeft {
   z-index: 100;
@@ -63,7 +65,6 @@
   .passIcon {
     background-image: url("../icons/passIcon.svg");
   }
-
   .loginBtn {
     background: common.$primaryColor;
     border-radius: 5px;
@@ -75,9 +76,9 @@
     font-weight: 600;
     border: 0px;
     &:hover {
-      border: 1px solid common.$secondaryColor;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
         0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      transition: box-shadow 200ms ease-out;
     }
   }
   .linkBtn {
@@ -125,5 +126,96 @@
     color: white;
     font-size: common.$subHeadFont;
     font-weight: 400;
+  }
+}
+
+.checkContainer {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  margin-top: 30px;
+  cursor: pointer;
+  font-size: common.$normalFont;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  & input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+  &:hover input ~ .checkmark {
+    border: 2px solid common.$secondaryColor;
+  }
+  & input:checked ~ .checkmark {
+    border: 2px solid common.$secondaryColor;
+    background-color: common.$secondaryColor;
+  }
+  & input:checked ~ .checkmark:after {
+    display: block;
+  }
+  & .checkmark:after {
+    left: 4px;
+    top: 2px;
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(51deg);
+    -webkit-transform: rotate(51deg);
+    -ms-transform: rotate(51deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .insideFlexLeft {
+    flex: 100%;
+  }
+  .insideFlexRight,
+  .yellowCircle,
+  .lightBlueCircle {
+    display: none;
+  }
+  .formBox {
+    width: 80%;
+  }
+  .formHeading {
+    font-size: common.$mainHeadFontMob;
+    font-weight: 500;
+  }
+  .circleRing{
+    position: absolute;
+    background: white;
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+  }
+  .yellowRing{
+    top: -12%;
+    left: -24%;
+    border: 13px solid common.$fadedPrimaryColor;
+  }
+  .blueRing{
+    bottom: -17%;
+    right: 6%;
+    border: 15px solid common.$fadedSecondaryColor;
   }
 }
